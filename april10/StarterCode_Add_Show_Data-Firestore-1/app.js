@@ -307,6 +307,69 @@ let rm = {
   fans_count: 798,
 };
 
+
+// Task 1: Creating/Storing data
+async function createTeams() {
+  const teams = [
+    {
+      name: "Real Madrid",
+      city: "Madrid",
+      country: "Spain",
+      top_scorers: ["Ronaldo", "Benzema", "Hazard"],
+      worldwide_fans: 798,
+    },
+    {
+      name: "Barcelona",
+      city: "Barcelona",
+      country: "Spain",
+      top_scorers: ["Messi", "Suarez", "Puyol"],
+      worldwide_fans: 738,
+    },
+    {
+      name: "Manchester United",
+      city: "Manchester",
+      country: "England",
+      top_scorers: ["Cantona", "Rooney", "Ronaldo"],
+      worldwide_fans: 755,
+    },
+    {
+      name: "Manchester City",
+      city: "Manchester",
+      country: "England",
+      top_scorers: ["Sterling", "Aguero", "Haaland"],
+      worldwide_fans: 537,
+    },
+    {
+      name: "Brazil National Team",
+      city: "Not applicable",
+      country: "Brazil",
+      top_scorers: ["Ronaldinho", "Cafu", "Bebeto"],
+      worldwide_fans: 950,
+    },
+    {
+      name: "Argentina national team",
+      city: "Not applicable",
+      country: "Argentina",
+      top_scorers: ["Messi", "Batistuta", "Maradona"],
+      worldwide_fans: 888,
+    },
+    {
+      name: "Atletico Madrid",
+      city: "Madrid",
+      country: "Spain",
+      top_scorers: ["Aragonés", "Griezmann", "Torez"],
+      worldwide_fans: 400,
+    },
+  ];
+
+  for (const team of teams) {
+    await db.collection("teams").add(team);
+  }
+  console.log("Teams added to Firebase!");
+}
+
+// createTeams(); // Uncomment to run and add teams to Firebase
+
 // add to the database
 
 // db.collection("teams").add(rm);
